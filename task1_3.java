@@ -5,8 +5,10 @@ Task_3.
  
 import java.util.Scanner;
 
-public class task3 {
+public class task1_3 {
     public static void main(String[] args) {
+
+        // declaration variable
         double num1;
         double num2;
         double res;
@@ -16,6 +18,8 @@ public class task3 {
         num2 = reader.nextDouble();
         System.out.println("\nEnter operation (+, -, /, *): ");
         op = reader.next().charAt(0);
+        
+        // switch with operations
         switch (op) {
             case '+': res = num1 + num2;
                 break;
@@ -28,6 +32,8 @@ public class task3 {
             default: System.out.println("Wrong operation");
                 return;
         }
+
+        // output result
         System.out.println("\nResult");
         System.out.printf(num1 + " " + op + " " + num2 + " = " + res);
     }

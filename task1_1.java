@@ -14,7 +14,7 @@ Sample Output:
 */
 
 import java.util.Scanner;
-public class task1 {
+public class task1_1 {
     public static void main(String[] args) {
         int[] numbers = new int[1000];              // intialization massiv
                for (int i = 1; i < 1000; i++) {

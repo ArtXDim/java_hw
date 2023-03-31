@@ -20,7 +20,7 @@ Sample Output:
 */
 import java.util.Scanner;
 
- public class task2 {
+ public class task1_2 {
  
    public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
