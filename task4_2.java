@@ -1,8 +1,24 @@
-/*
-Task4_2
-Реализуйте очередь с помощью LinkedList со следующими методами:
+//task4_2
 
-• enqueue() — помещает элемент в конец очереди,
-• dequeue() — возвращает первый элемент из очереди и удаляет его,
-• first() — возвращает первый элемент из очереди, не удаляя.
- */
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
+
+public class task4_2 {
+
+//Даны два Deque представляющие два неотрицательных целых числа. Цифры хранятся в обратном порядке,
+// и каждый из их узлов содержит одну цифру.
+// Сложите два числа и верните сумму в виде связанного списка.
+public static void main(String[] args) {
+    Deque<Integer> d1 = new ArrayDeque<>(Arrays.asList(1,2,3));
+    Deque<Integer> d2 = new ArrayDeque<>(Arrays.asList(5,4,7));
+    // result [6,6,0,1]
+
+}
+
+
+public Deque<Integer> sum(Deque<Integer> d1, Deque<Integer> d2) {
+
+    return new ArrayDeque<>();
+}
+}
