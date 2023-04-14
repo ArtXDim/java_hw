@@ -1,43 +1,54 @@
-Реализуйте структуру телефонной книги с помощью HashMap, учитывая, 
-что 1 человек может иметь несколько телефонов.
+/*Реализуйте структуру телефонной книги с помощью HashMap, учитывая, 
+что 1 человек может иметь несколько телефонов.*/
 
-Пусть дан список сотрудников:
 
-Иван Иванов
+import java.util.HashMap;
+import java.util.Scanner;
 
-Светлана Петрова
 
-Кристина Белова
+public class task5_1 {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    HashMap<String, String> phoneBook = new HashMap<String, String>();
+    
+    System.out.println("введите Имя и номер телефона через ПРОБЕЛ, и \"стоп\" для выхода: ");
 
-Анна Мусина
+    while (true) {
+        String input = sc.nextLine();
 
-Анна Крутова
+        if (input.equalsIgnoreCase("стоп")) {
+            break;            
+        }
 
-Иван Юрин
+        String[] tempbook = input.split(" ");
+        if (tempbook.length < 2) {
+            System.out.println("неверный формат Имя/Номер. Повторите ввод");
+            continue;
+        }
+        String name = tempbook[0];
+        String numbers = "";
 
-Петр Лыков
+        for (int i = 1; i < tempbook.length; i++) {
+            numbers += tempbook[i] + ",";    
+        }
+        numbers = numbers.substring(0, numbers.length() -1);
 
-Павел Чернов
+        if (phoneBook.containsKey(name)){
+            String phoneExists = phoneBook.get(name);
+            phoneBook.put(name, phoneExists + ", " + numbers);            
+        }
+        else{
+            phoneBook.put(name, numbers);
+        }
 
-Петр Чернышов
+        System.out.println("данные записаны. Продолжите ввод или введите: \"стоп\" для выхода: ");        
+    }
 
-Мария Федорова
-
-Марина Светлова
-
-Мария Савина
-
-Мария Рыкова
-
-Марина Лугова
-
-Анна Владимирова
-
-Иван Мечников
-
-Петр Петин
-
-Иван Ежов
-
-Написать программу, которая найдёт и выведет повторяющиеся имена с количеством повторений. Отсортировать по убыванию популярности.
-Реализовать алгоритм пирамидальной сортировки (HeapSort).
+    System.out.println("Телефонная книга:");
+        for (String name : phoneBook.keySet()) {
+            String phones = phoneBook.get(name);
+            System.out.println(name + ": " + phones);
+        }
+        sc.close();
+    }
+}
